@@ -1,17 +1,20 @@
 ﻿string text = File.ReadAllText($@"{Environment.CurrentDirectory}\some.txt");
 
 char[] symbols = text.ToCharArray();
-
 //var symbols = text.ToList();
 
-int numberOfSymbols = 0;
+Console.WriteLine(Calculate(symbols));
 
-foreach(char symbol in symbols)
-{
-    if (Char.IsPunctuation(symbol))
+int Calculate(char[] text){
+    int numberOfSymbols = 0;
+
+    foreach(char symbol in symbols)
     {
-        numberOfSymbols++;
+        if (Char.IsPunctuation(symbol))
+        {
+            numberOfSymbols++;
+        }
     }
-}
 
-Console.WriteLine(numberOfSymbols);
+    return numberOfSymbols;
+}
